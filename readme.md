@@ -8,7 +8,10 @@
 - [ ]  validar boleto do tipo convênio
   - [ ] testes unitários
 
-## retorno da api
+---
+> ## retorno da api
+<br />
+
 A api retorna um json, contendo caso de sucesso ou erro.
 
  - exemplo de sucesso: (status code: 200)
