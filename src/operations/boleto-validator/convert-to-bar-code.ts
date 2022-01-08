@@ -1,4 +1,4 @@
-import { IConvertToBarCode } from '../../domain/useCases/IConvertToBarCode'
+import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
 
 export class ConvertToBarCode implements IConvertToBarCode {
   convert = (completeDigitableLine: string): string => {

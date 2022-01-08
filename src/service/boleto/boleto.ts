@@ -1,6 +1,6 @@
 import { Request } from 'express'
-import { IBoletoValidator } from '../../operations/boleto-validator/boleto-validator'
-import { badRequest, ok } from '../helpers/http-errors'
+import { IBoletoValidator } from '../../domain/useCases/boleto-validator'
+import { badRequest } from '../helpers/http-errors'
 import { IHttpResponse } from '../protocols/httpResponse'
 import { IService } from '../protocols/service'
 
@@ -9,7 +9,10 @@ export class BoletoService implements IService {
   private readonly boletoArrecadacaoLength = 48
   private readonly boletoArrecadacaoInitialNumber = '8'
 
-  constructor (private readonly boletoBancario: IBoletoValidator) {}
+  constructor (
+    private readonly boletoBancario: IBoletoValidator,
+    private readonly boletoArrecadacao: IBoletoValidator
+  ) {}
 
   handle = (req: Request): IHttpResponse => {
     const { digitableLine } = req.params
@@ -20,7 +23,7 @@ export class BoletoService implements IService {
       digitableLine.length === this.boletoArrecadacaoLength &&
        digitableLine[0] === this.boletoArrecadacaoInitialNumber
     ) {
-      return ok('boleto de arrecadação')
+      return this.boletoArrecadacao.handle(digitableLine)
     }
 
     return badRequest('Linha digitável inválida')

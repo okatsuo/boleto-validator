@@ -1,4 +1,4 @@
-import { IConvertToBarCode } from '../../domain/useCases/IConvertToBarCode'
+import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
 import { ok } from '../../service/helpers/http-errors'
 import { IHttpResponse } from '../../service/protocols/httpResponse'
 
