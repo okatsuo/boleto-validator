@@ -8,7 +8,11 @@ export class CalculateDate implements ICalculateDate {
     const expirationDate = new Date(date.setTime(date.getTime() + (Number(value) * 24 * 60 * 60 * 1000)))
 
     const formatExpirationDate = expirationDate
-      .toLocaleString().split(' ')[0]
+      .toLocaleString('pt-BR')
+      .split(' ')[0]
+      .split('/')
+      .reverse()
+      .join('-')
 
     return formatExpirationDate
   }

@@ -12,6 +12,6 @@ const makeSut = (): SutType => {
 describe('Calculate date', () => {
   it('should return with correct date', () => {
     const { sut } = makeSut()
-    expect(sut.calculate('8861')).toBe('10/01/2022')
+    expect(sut.calculate('8861')).toBe('2022-01-10')
   })
 })
