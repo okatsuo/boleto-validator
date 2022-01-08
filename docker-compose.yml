@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  app:
+    build: .
+    command: yarn dev
+    container_name: boleto-validator
+    ports:
+      - 8800:8800
+    volumes:
+      - .:/app
