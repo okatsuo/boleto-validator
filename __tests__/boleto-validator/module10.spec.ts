@@ -1,4 +1,4 @@
-import { Module10 } from '../../src/service/boleto/operations/boleto-validator/module10'
+import { Module10 } from '../../src/operations/boleto-validator/module10'
 
 type SutType = {
   sut: Module10

@@ -1,4 +1,4 @@
-import { CalculateAmount } from '../../src/service/boleto/operations/boleto-validator/calculate-amount'
+import { CalculateAmount } from '../../src/operations/boleto-validator/calculate-amount'
 
 type SutType = {
   sut: CalculateAmount

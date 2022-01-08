@@ -1,6 +1,6 @@
-import { IConvertToBarCode } from '../../../../domain/useCases/IConvertToBarCode'
-import { ok } from '../../../helpers/http-errors'
-import { IHttpResponse } from '../../../protocols/httpResponse'
+import { IConvertToBarCode } from '../../domain/useCases/IConvertToBarCode'
+import { ok } from '../../service/helpers/http-errors'
+import { IHttpResponse } from '../../service/protocols/httpResponse'
 
 export class BoletoArrecadacao {
   constructor (private readonly convertToBarCode: IConvertToBarCode

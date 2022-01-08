@@ -1,5 +1,5 @@
 import { Request } from 'express'
-import { IBoletoValidator } from './operations/boleto-validator/boleto-validator'
+import { IBoletoValidator } from '../../operations/boleto-validator/boleto-validator'
 import { badRequest, ok } from '../helpers/http-errors'
 import { IHttpResponse } from '../protocols/httpResponse'
 import { IService } from '../protocols/service'
