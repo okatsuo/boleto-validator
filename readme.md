@@ -8,6 +8,27 @@
 - [ ]  validar boleto do tipo convênio
   - [ ] testes unitários
 
+## retorno da api
+A api retorna um json, contendo caso de sucesso ou erro.
+
+ - exemplo de sucesso: (status code: 200)
+ ```js
+  {
+    "data": {
+      "barCode": "21299758700000020000001121100012100447561740",
+      "amount": "20.00",
+      "expirationDate": "2018-07-16"
+    }
+  }
+ ```
+ - exemplo de erro: (status code 400)
+```js
+  {
+    "error": {
+      "message": "Linha digitável inválida"
+    }
+  }
+ ```
 ---
 
 
