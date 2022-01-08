@@ -10,7 +10,9 @@
     "dev": "ts-node-dev --poll --respawn src/index.ts",
     "docker:start": "docker build -t boleto-validator . && docker run -p 8800:8800 boleto-validator",
     "docker:dev": "docker compose up",
-    "test:unit": "yarn jest --watch -o"
+    "test": "yarn jest",
+    "test:unit": "yarn test --watch -o",
+    "test:ci": "yarn test --coverage"
   },
   "devDependencies": {
     "@types/jest": "27.4.0",
