@@ -1,11 +1,12 @@
-import { Request, Response } from 'express'
+import { badRequest, ok } from '../service/helpers/http-errors'
+import { IHttpResponse } from '../service/protocols/httpResponse'
 import { ICalculateAmount } from './calculate-amount'
 import { ICalculateDate } from './calculate-digitable-line-date'
 import { IConvertToBarCode } from './convert-to-bar-code'
 import { IDigitVerification } from './digit-verification'
 
-type IBoletoValidator = {
-  validate: (request: Request, response: Response) => Response
+export type IBoletoValidator = {
+  handle: (digitableLine: string) => IHttpResponse
 }
 
 export class BoletoValidator implements IBoletoValidator {
@@ -17,16 +18,12 @@ export class BoletoValidator implements IBoletoValidator {
     private readonly codeBar: IConvertToBarCode
   ) {}
 
-  validate = (req: Request, res: Response): Response => {
-    const { digitableLine } = req.params
-
-    if (!digitableLine) return res.send(false)
-
+  handle = (digitableLine: string): IHttpResponse => {
     const isValidFormat = this.boletoFormat.test(digitableLine)
-    if (!isValidFormat) return res.send(false)
+    if (!isValidFormat) return badRequest('Inválido formato de linha digitável')
 
     const isValidDv = this.digitVerification.validate(digitableLine)
-    if (!isValidDv) return res.send(false)
+    if (!isValidDv) return badRequest('Inválido digito verificador')
 
     const codeBar = this.codeBar.convert(digitableLine)
 
@@ -36,13 +33,10 @@ export class BoletoValidator implements IBoletoValidator {
     const amount = this.calculateAmount
       .calculate(digitableLine.substring(37, 47))
 
-    return res.json({
-      statusCode: 200,
-      data: {
-        codeBar,
-        amount,
-        expirationDate
-      }
+    return ok({
+      codeBar,
+      amount,
+      expirationDate
     })
   }
 }
