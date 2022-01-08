@@ -3,11 +3,10 @@ type IBoletoValidator = {
 }
 
 export class BoletoValidator implements IBoletoValidator {
-  bank_title_length = 44
+  bankTitleLength = 44
   validate (digitableLine: string): boolean {
     const isValid = digitableLine.match(/^[0-9]+$/)
-    if (!isValid || digitableLine.length !== this.bank_title_length) return false
-
+    if (!isValid || digitableLine.length !== this.bankTitleLength) return false
     return true
   }
 }
