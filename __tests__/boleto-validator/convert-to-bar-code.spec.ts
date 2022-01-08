@@ -1,4 +1,4 @@
-import { ConvertToBarCode } from '../../src/boleto-validator/convert-to-bar-code'
+import { ConvertToBarCode } from '../../src/service/boleto/operations/boleto-validator/convert-to-bar-code'
 
 type SutType = {
   sut: ConvertToBarCode

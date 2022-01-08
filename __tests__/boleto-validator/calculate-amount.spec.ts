@@ -1,4 +1,4 @@
-import { CalculateAmount } from '../../src/boleto-validator/calculate-amount'
+import { CalculateAmount } from '../../src/service/boleto/operations/boleto-validator/calculate-amount'
 
 type SutType = {
   sut: CalculateAmount
@@ -29,7 +29,7 @@ describe('Calculate amount', () => {
     expect(amount).toEqual(expect.any(String))
   })
 
-  it('should throw if the amount is not 10 characters long', () => {
+  it('should throw if the amount is not 10 characterss long', () => {
     const { sut } = makeSut()
     expect(() => {
       sut.calculate('123456789')

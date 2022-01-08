@@ -1,5 +1,5 @@
-import { DigitVerification } from '../../src/boleto-validator/digit-verification'
-import { IModule10, Module10 } from '../../src/boleto-validator/module10'
+import { DigitVerification } from '../../src/service/boleto/operations/boleto-validator/digit-verification'
+import { IModule10, Module10 } from '../../src/service/boleto/operations/boleto-validator/module10'
 
 type SutType = {
   Module10Stub: IModule10

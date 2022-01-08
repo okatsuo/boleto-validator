@@ -1,5 +1,5 @@
-import { ok } from '../service/helpers/http-errors'
-import { IHttpResponse } from '../service/protocols/httpResponse'
+import { ok } from '../../../helpers/http-errors'
+import { IHttpResponse } from '../../../protocols/httpResponse'
 
 export class BoletoArrecadacao {
   handle = (digitableLine: string): IHttpResponse => {

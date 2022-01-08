@@ -1,5 +1,5 @@
-import { badRequest, ok } from '../service/helpers/http-errors'
-import { IHttpResponse } from '../service/protocols/httpResponse'
+import { badRequest, ok } from '../../../helpers/http-errors'
+import { IHttpResponse } from '../../../protocols/httpResponse'
 import { ICalculateAmount } from './calculate-amount'
 import { ICalculateDate } from './calculate-digitable-line-date'
 import { IConvertToBarCode } from './convert-to-bar-code'
