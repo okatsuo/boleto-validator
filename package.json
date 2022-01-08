@@ -5,6 +5,7 @@
   "author": "okatsuo <rafael.goncanna@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "build": "rimraf dist && yarn tsc -p tsconfig-build.json",
     "start": "yarn build && node dist/main/index.js",
     "dev": "ts-node-dev --poll --respawn src/main/index.ts",
