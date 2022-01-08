@@ -1,5 +1,5 @@
 import { ICalculateAmount } from './calculate-amount'
-import { iCalculateDigitableLineDate } from './calculate-digitable-line-date'
+import { ICalculateDate } from './calculate-digitable-line-date'
 
 type IBoletoValidator = {
   validate: (digitableLine: string) => any
@@ -9,7 +9,7 @@ export class BoletoValidator implements IBoletoValidator {
   bankTitleLength = 47
 
   constructor (
-    private readonly calculateDate: iCalculateDigitableLineDate,
+    private readonly calculateDate: ICalculateDate,
     private readonly calculateAmount: ICalculateAmount
   ) {}
 

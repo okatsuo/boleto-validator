@@ -1,15 +1,15 @@
 import { BoletoValidator } from '../src/boleto-validator'
 import { ICalculateAmount } from '../src/calculate-amount'
-import { iCalculateDigitableLineDate } from '../src/calculate-digitable-line-date'
+import { ICalculateDate } from '../src/calculate-digitable-line-date'
 
-const makeCalculateDigitableLineDateStub = (): iCalculateDigitableLineDate => {
-  class CalculateDigitableLineDateStub implements iCalculateDigitableLineDate {
+const makeCalculateDateStub = (): ICalculateDate => {
+  class CalculateDateStub implements ICalculateDate {
     calculate (value: string): string {
       return 'valid_date'
     }
   }
 
-  return new CalculateDigitableLineDateStub()
+  return new CalculateDateStub()
 }
 
 const makeCalculateAmountStub = (): ICalculateAmount => {
@@ -23,18 +23,18 @@ const makeCalculateAmountStub = (): ICalculateAmount => {
 }
 
 type SutType = {
-  calculateDigitableLineDateStub: iCalculateDigitableLineDate
+  calculateDateStub: ICalculateDate
   calculateAmountStub: ICalculateAmount
   sut: BoletoValidator
 }
 
 const makeSut = (): SutType => {
-  const calculateDigitableLineDateStub = makeCalculateDigitableLineDateStub()
+  const calculateDateStub = makeCalculateDateStub()
   const calculateAmountStub = makeCalculateAmountStub()
-  const sut = new BoletoValidator(calculateDigitableLineDateStub, calculateAmountStub)
+  const sut = new BoletoValidator(calculateDateStub, calculateAmountStub)
 
   return {
-    calculateDigitableLineDateStub,
+    calculateDateStub,
     calculateAmountStub,
     sut
   }
