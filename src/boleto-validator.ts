@@ -5,6 +5,7 @@ type IBoletoValidator = {
 export class BoletoValidator implements IBoletoValidator {
   validate (digitableLine: string): boolean {
     const isValid = digitableLine.match(/^[0-9]+$/)
-    return !!isValid
+    if (!isValid) return false
+    return true
   }
 }
