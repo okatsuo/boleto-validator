@@ -3,7 +3,7 @@ export type ICalculateAmount = {
 }
 
 export class CalculateAmount {
-  calculate (value: string): string {
+  calculate = (value: string): string => {
     const amount = value.split('')
     const cents = amount.splice(amount.length - 2, 2)
     const amountToNumber = parseFloat(`${amount.join('')}.${cents.join('')}`)

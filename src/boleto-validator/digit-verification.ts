@@ -7,7 +7,7 @@ export type IDigitVerification = {
 export class DigitVerification implements IDigitVerification {
   constructor (private readonly module10: IModule10) {}
 
-  validate (completeDigitableLine: string): boolean {
+  validate = (completeDigitableLine: string): boolean => {
     const blocksToValidateDv = [
       {
         num: completeDigitableLine.substring(0, 9),

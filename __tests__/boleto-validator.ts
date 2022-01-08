@@ -1,6 +1,6 @@
-import { BoletoValidator } from '../src/boleto-validator'
-import { ICalculateAmount } from '../src/calculate-amount'
-import { ICalculateDate } from '../src/calculate-digitable-line-date'
+import { BoletoValidator } from '../src/boleto-validator/boleto-validator'
+import { ICalculateAmount } from '../src/boleto-validator/calculate-amount'
+import { ICalculateDate } from '../src/boleto-validator/calculate-digitable-line-date'
 
 const makeCalculateDateStub = (): ICalculateDate => {
   class CalculateDateStub implements ICalculateDate {

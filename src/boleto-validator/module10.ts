@@ -3,7 +3,7 @@ export type IModule10 = {
 }
 
 export class Module10 implements IModule10 {
-  calculate (value: string): string {
+  calculate = (value: string): string => {
     const code = value.split('').reverse()
 
     const summation = code.reduce((acc, current, index) => {
@@ -13,7 +13,6 @@ export class Module10 implements IModule10 {
     }, 0)
 
     const result = (Math.ceil(summation / 10) * 10) - summation
-
     return result.toString()
   }
 }

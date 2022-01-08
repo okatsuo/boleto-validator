@@ -1,15 +1,15 @@
+import { Request, Response } from 'express'
 import { ICalculateAmount } from './calculate-amount'
 import { ICalculateDate } from './calculate-digitable-line-date'
 import { IConvertToBarCode } from './convert-to-bar-code'
 import { IDigitVerification } from './digit-verification'
 
 type IBoletoValidator = {
-  validate: (digitableLine: string) => any
+  validate: (request: Request, response: Response) => Response
 }
 
 export class BoletoValidator implements IBoletoValidator {
   private readonly boletoFormat = /^[0-9]{47}$/
-
   constructor (
     private readonly calculateDate: ICalculateDate,
     private readonly calculateAmount: ICalculateAmount,
@@ -17,12 +17,16 @@ export class BoletoValidator implements IBoletoValidator {
     private readonly codeBar: IConvertToBarCode
   ) {}
 
-  validate (digitableLine: string): any {
+  validate = (req: Request, res: Response): Response => {
+    const { digitableLine } = req.params
+
+    if (!digitableLine) return res.send(false)
+
     const isValidFormat = this.boletoFormat.test(digitableLine)
-    if (!isValidFormat) return false
+    if (!isValidFormat) return res.send(false)
 
     const isValidDv = this.digitVerification.validate(digitableLine)
-    if (!isValidDv) return false
+    if (!isValidDv) return res.send(false)
 
     const codeBar = this.codeBar.convert(digitableLine)
 
@@ -32,16 +36,16 @@ export class BoletoValidator implements IBoletoValidator {
     const amount = this.calculateAmount
       .calculate(digitableLine.substring(37, 47))
 
-    return {
+    return res.json({
       statusCode: 200,
       data: {
         codeBar,
         amount,
         expirationDate
       }
-    }
+    })
   }
 }
 
-// console.log(boletoValidator.validate('03399340858500000011842498201013388610000065930'))
-// console.log(boletoValidator.validate('21290001192110001210904475617405975870000002000'))
+// 03399340858500000011842498201013388610000065930
+// 21290001192110001210904475617405975870000002000

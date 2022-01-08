@@ -3,7 +3,7 @@ export type IConvertToBarCode = {
 }
 
 export class ConvertToBarCode implements IConvertToBarCode {
-  convert (completeDigitableLine: string): string {
+  convert = (completeDigitableLine: string): string => {
     let barCode = ''
     barCode += completeDigitableLine.substring(0, 3)
     barCode += completeDigitableLine.substring(3, 4)
