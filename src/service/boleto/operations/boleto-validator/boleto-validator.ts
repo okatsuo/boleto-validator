@@ -1,8 +1,8 @@
+import { IConvertToBarCode } from '../../../../domain/useCases/IConvertToBarCode'
 import { badRequest, ok } from '../../../helpers/http-errors'
 import { IHttpResponse } from '../../../protocols/httpResponse'
 import { ICalculateAmount } from './calculate-amount'
 import { ICalculateDate } from './calculate-digitable-line-date'
-import { IConvertToBarCode } from './convert-to-bar-code'
 import { IDigitVerification } from './digit-verification'
 
 export type IBoletoValidator = {

@@ -1,7 +1,7 @@
+import { IConvertToBarCode } from '../../src/domain/useCases/IConvertToBarCode'
 import { BoletoValidator } from '../../src/service/boleto/operations/boleto-validator/boleto-validator'
 import { ICalculateAmount } from '../../src/service/boleto/operations/boleto-validator/calculate-amount'
 import { ICalculateDate } from '../../src/service/boleto/operations/boleto-validator/calculate-digitable-line-date'
-import { IConvertToBarCode } from '../../src/service/boleto/operations/boleto-validator/convert-to-bar-code'
 import { IDigitVerification } from '../../src/service/boleto/operations/boleto-validator/digit-verification'
 import { badRequest, ok } from '../../src/service/helpers/http-errors'
 
