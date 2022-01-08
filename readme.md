@@ -6,11 +6,10 @@
 - [X] validar boleto do tipo bancário
   - [X] testes unitários
 - [ ]  validar boleto do tipo convênio
-  - [X] testes unitários
+  - [ ] testes unitários
 
 ---
 
-<br />
 
 > ## Como executar o projeto
 <br />
@@ -36,7 +35,6 @@ yarn docker:dev
 ```
 
 ---
-<br />
 
 
 > ## Como executar o projeto com docker:
@@ -48,7 +46,6 @@ yarn docker:dev
   ```
 
 ---
-<br />
 
 > ## Scripts
 <br />
@@ -61,11 +58,10 @@ yarn docker:dev
 
 - **yarn docker:dev**: inicia o servidor em modo de desenvolvimento usando docker-compose
 
-- **yarn test:unit**: roda os testes unitários (apenas dos arquivos modificados)
+- **yarn test:unit**: roda os testes unitários ( apenas dos arquivos modificados )
 
 - **yarn test:ci**: roda todos os testes do sistema e gera o coverage atual
 ---
-<br />
 
 Por padrão as portas estão 8800, mas pode ser trocada, basta clonar o arquivo .env.example e modificar o nome para .env e enserir a nova porta na variável PORT=
 
