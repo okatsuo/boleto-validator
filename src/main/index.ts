@@ -1,14 +1,20 @@
+import 'dotenv/config'
 import express from 'express'
-import { boletoRouters } from './routers'
+import { appConfig } from './config'
+import { boletoRouters, routeExample } from './routers'
 
 class Bootstrap {
   execute (): void {
     const app = express()
+    const { port } = appConfig
+
+    app.disable('x-powered-by')
+    app.get('/', routeExample)
 
     app.use(boletoRouters)
 
-    app.listen(8800, () => {
-      console.log(`Server running at:  http://localhost${8800}`)
+    app.listen(port, () => {
+      console.log(`Server running at: http://localhost:${port}`)
     })
   }
 }
