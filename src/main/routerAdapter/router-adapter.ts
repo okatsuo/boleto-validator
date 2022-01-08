@@ -7,7 +7,7 @@ export const routerAdapter = (service: IService) => {
     if (httpResponse.statusCode >= 200 && httpResponse.statusCode <= 299) {
       res.status(httpResponse.statusCode).json({ data: httpResponse.data })
     } else {
-      res.status(httpResponse.statusCode).json({ error: httpResponse.data.message })
+      res.status(httpResponse.statusCode).json({ error: { message: httpResponse.data.message } })
     }
   }
 }
