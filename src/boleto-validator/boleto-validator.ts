@@ -25,7 +25,7 @@ export class BoletoValidator implements IBoletoValidator {
     const isValidDv = this.digitVerification.validate(digitableLine)
     if (!isValidDv) return badRequest('Inválido digito verificador')
 
-    const codeBar = this.codeBar.convert(digitableLine)
+    const barCode = this.codeBar.convert(digitableLine)
 
     const expirationDate = this.calculateDate
       .calculate(digitableLine.substring(33, 37))
@@ -34,7 +34,7 @@ export class BoletoValidator implements IBoletoValidator {
       .calculate(digitableLine.substring(37, 47))
 
     return ok({
-      codeBar,
+      barCode,
       amount,
       expirationDate
     })
