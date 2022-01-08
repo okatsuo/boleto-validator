@@ -5,10 +5,6 @@ export type IModule10 = {
 export class Module10 implements IModule10 {
   private readonly requiredLenght = 9
   calculate = (value: string): string => {
-    if (!value || value.length !== this.requiredLenght) {
-      throw new Error('the string must have 9 characters long')
-    }
-
     const code = value.split('').reverse()
 
     const summation = code.reduce((acc, current, index) => {
