@@ -11,7 +11,7 @@ export class BoletoArrecadacao {
 
   handle = (digitableLine: string): IHttpResponse => {
     const barCode = this.convertToBarCode.convert(digitableLine)
-    const isValidDigitVerification = this.digitVerification.validate(digitableLine)
+    const isValidDigitVerification = this.digitVerification.validate(barCode)
     if (!isValidDigitVerification) return badRequest('Inválida validação de digíto')
 
     return ok({

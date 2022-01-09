@@ -1,13 +1,14 @@
 export class ArrecadacaoModule11 {
   private readonly module11 = 11
-  private multiplier = 2
 
   calculate = (value: string): string => {
     const code = value.split('').reverse()
 
+    let multiplier = 2
+
     const summation = code.reduce((acc, current) => {
-      const sum = Number(current) * this.multiplier
-      this.multiplier = this.multiplier === 9 ? 2 : this.multiplier + 1
+      const sum = Number(current) * multiplier
+      multiplier = multiplier === 9 ? 2 : multiplier + 1
       return acc + sum
     }, 0)
 
