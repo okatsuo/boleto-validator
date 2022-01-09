@@ -42,12 +42,14 @@ para instalar as dependências, no teu console de preferência:
  ```bash
   yarn install
   ```
-ou
-  ```bash
-  npm install
-  ```
 
 para rodar a api:
+ ```bash
+ yarn start
+ ```
+
+para rodar em modo desenvolvimento: 
+
  ```bash
  yarn dev
  ```
