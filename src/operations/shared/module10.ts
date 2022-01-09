@@ -1,6 +1,6 @@
-import { IModule10 } from '../../domain/useCases/module10'
+import { IModuleCalculation } from '../../domain/useCases/module-calculation'
 
-export class Module10 implements IModule10 {
+export class Module10 implements IModuleCalculation {
   private readonly isBiggerThanOneDigit = (value: number): boolean => {
     return value > 9
   }

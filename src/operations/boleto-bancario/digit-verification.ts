@@ -1,8 +1,8 @@
 import { IDigitVerification } from '../../domain/useCases/digit-verification'
-import { IModule10 } from '../../domain/useCases/module10'
+import { IModuleCalculation } from '../../domain/useCases/module-calculation'
 
 export class DigitVerification implements IDigitVerification {
-  constructor (private readonly module10: IModule10) {}
+  constructor (private readonly module10: IModuleCalculation) {}
 
   validate = (completeDigitableLine: string): boolean => {
     const blocksToValidateDv = [

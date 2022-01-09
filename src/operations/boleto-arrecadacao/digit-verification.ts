@@ -1,12 +1,12 @@
-import { IModule10 } from '../../domain/useCases'
+import { IModuleCalculation } from '../../domain/useCases'
 
 export class ArrecadacaoDigitVerification {
   private readonly numbersToModule10 = [6, 7]
   private readonly numbersToModule11 = [8, 9]
 
   constructor (
-    private readonly module10: IModule10,
-    private readonly arrecadacaoModule11: IModule10
+    private readonly module10: IModuleCalculation,
+    private readonly arrecadacaoModule11: IModuleCalculation
   ) {
   }
 

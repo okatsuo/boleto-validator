@@ -1,9 +1,9 @@
-import { IModule10 } from '../../../src/domain/useCases'
+import { IModuleCalculation } from '../../../src/domain/useCases'
 import { DigitVerification } from '../../../src/operations/boleto-bancario'
 import { Module10 } from '../../../src/operations/shared'
 
 type SutType = {
-  Module10Stub: IModule10
+  Module10Stub: IModuleCalculation
   sut: DigitVerification
 }
 
