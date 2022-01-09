@@ -14,12 +14,15 @@ export class ArrecadacaoModule11 {
 
     const rest = summation % this.module11
 
-    if (rest === 0 || rest === 1) {
-      return '0'
+    switch (rest) {
+      case 0:
+      case 1:
+        return '0'
+
+      case 10:
+        return '1'
     }
-    if (rest === 10) {
-      return '1'
-    }
+
     const DV = this.module11 - rest
     return DV.toString()
   }
