@@ -1,15 +1,15 @@
 import { IModuleCalculation } from '../../../src/domain/useCases'
-import { DigitVerification } from '../../../src/operations/boleto-bancario'
+import { BancarioDigitVerification } from '../../../src/operations/boleto-bancario'
 import { Module10 } from '../../../src/operations/shared'
 
 type SutType = {
   Module10Stub: IModuleCalculation
-  sut: DigitVerification
+  sut: BancarioDigitVerification
 }
 
 const makeSut = (): SutType => {
   const Module10Stub = new Module10()
-  const sut = new DigitVerification(Module10Stub)
+  const sut = new BancarioDigitVerification(Module10Stub)
 
   return {
     Module10Stub,

@@ -128,28 +128,28 @@ describe('Boleto validator', () => {
     expect(convertToBarCodeSpy).toBeCalledTimes(1)
   })
 
-  it('should call the CalculateDate with correct value', () => {
+  it('should call the BancarioCalculateDate with correct value', () => {
     const { sut, calculateDateStub } = makeSut()
     const calculateDateSpy = jest.spyOn(calculateDateStub, 'calculate')
     sut.handle(validDigitableLine)
     expect(calculateDateSpy).toBeCalledWith(validDigitableLine.substring(33, 37))
   })
 
-  it('should call the CalculateDate only 1 time', () => {
+  it('should call the BancarioCalculateDate only 1 time', () => {
     const { sut, calculateDateStub } = makeSut()
     const calculateDateSpy = jest.spyOn(calculateDateStub, 'calculate')
     sut.handle(validDigitableLine)
     expect(calculateDateSpy).toBeCalledTimes(1)
   })
 
-  it('should call the CalculateAmount with correct value', () => {
+  it('should call the BancarioCalculateAmount with correct value', () => {
     const { sut, calculateAmountStub } = makeSut()
     const calculateAmountSpy = jest.spyOn(calculateAmountStub, 'calculate')
     sut.handle(validDigitableLine)
     expect(calculateAmountSpy).toBeCalledWith(validDigitableLine.substring(37, 47))
   })
 
-  it('should call the CalculateAmount only 1 time', () => {
+  it('should call the BancarioCalculateAmount only 1 time', () => {
     const { sut, calculateAmountStub } = makeSut()
     const calculateAmountSpy = jest.spyOn(calculateAmountStub, 'calculate')
     sut.handle(validDigitableLine)

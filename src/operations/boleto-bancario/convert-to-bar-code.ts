@@ -1,6 +1,6 @@
 import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
 
-export class ConvertToBarCode implements IConvertToBarCode {
+export class BancarioConvertToBarCode implements IConvertToBarCode {
   convert = (digitableLine: string): string => {
     let barCode = ''
     barCode += digitableLine.substring(0, 3)

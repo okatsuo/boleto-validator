@@ -1,7 +1,7 @@
 import { IDigitVerification } from '../../domain/useCases/digit-verification'
 import { IModuleCalculation } from '../../domain/useCases/module-calculation'
 
-export class DigitVerification implements IDigitVerification {
+export class BancarioDigitVerification implements IDigitVerification {
   constructor (private readonly module10: IModuleCalculation) {}
 
   validate = (completeDigitableLine: string): boolean => {

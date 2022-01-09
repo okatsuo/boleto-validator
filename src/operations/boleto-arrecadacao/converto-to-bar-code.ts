@@ -1,4 +1,4 @@
-export class ConvertBoletoArrecadacaoToBarCode {
+export class ArrecadacaoConvertToBarCode {
   convert (digitableLine: string): string {
     let barCode = ''
     for (let index = 0; index < 4; index++) {

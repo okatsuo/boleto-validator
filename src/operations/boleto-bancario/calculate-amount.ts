@@ -1,6 +1,6 @@
 import { ICalculateAmount } from '../../domain/useCases/calculate-amount'
 
-export class CalculateAmount implements ICalculateAmount {
+export class BancarioCalculateAmount implements ICalculateAmount {
   private readonly requiredAmountLenght = 10
   calculate = (value: string): string => {
     if (value.length !== this.requiredAmountLenght) throw new Error('Amount must have 10 characters long')

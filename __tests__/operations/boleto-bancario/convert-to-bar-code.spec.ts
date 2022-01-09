@@ -1,11 +1,11 @@
-import { ConvertToBarCode } from '../../../src/operations/boleto-bancario'
+import { BancarioConvertToBarCode } from '../../../src/operations/boleto-bancario'
 
 type SutType = {
-  sut: ConvertToBarCode
+  sut: BancarioConvertToBarCode
 }
 
 const makeSut = (): SutType => {
-  const sut = new ConvertToBarCode()
+  const sut = new BancarioConvertToBarCode()
   return { sut }
 }
 

@@ -1,11 +1,11 @@
-import { CalculateAmount } from '../../../src/operations/boleto-bancario'
+import { BancarioCalculateAmount } from '../../../src/operations/boleto-bancario'
 
 type SutType = {
-  sut: CalculateAmount
+  sut: BancarioCalculateAmount
 }
 
 const makeSut = (): SutType => {
-  const sut = new CalculateAmount()
+  const sut = new BancarioCalculateAmount()
   return { sut }
 }
 
