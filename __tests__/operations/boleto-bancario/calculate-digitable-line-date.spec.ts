@@ -1,4 +1,4 @@
-import { CalculateDate } from '../../src/operations/boleto-bancario'
+import { CalculateDate } from '../../../src/operations/boleto-bancario'
 
 type SutType = {
   sut: CalculateDate

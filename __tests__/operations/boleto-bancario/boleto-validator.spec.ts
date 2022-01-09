@@ -3,9 +3,9 @@ import {
   ICalculateAmount,
   IDigitVerification,
   IConvertToBarCode
-} from '../../src/domain/useCases'
-import { BoletoBancario } from '../../src/operations/boleto-bancario'
-import { badRequest, ok } from '../../src/service/helpers'
+} from '../../../src/domain/useCases'
+import { BoletoBancario } from '../../../src/operations/boleto-bancario'
+import { badRequest, ok } from '../../../src/service/helpers'
 
 const makeCalculateDateStub = (): ICalculateDate => {
   class CalculateDateStub implements ICalculateDate {
