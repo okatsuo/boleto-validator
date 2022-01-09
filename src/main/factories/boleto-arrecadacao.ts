@@ -3,9 +3,11 @@ import {
   ConvertBoletoArrecadacaoToBarCode,
   ArrecadacaoDigitVerification
 } from '../../operations/boleto-arrecadacao'
+import { Module10 } from '../../operations/shared'
 
 export const makeBoletoArrecadacao = (): BoletoArrecadacao => {
   const convertToBarCode = new ConvertBoletoArrecadacaoToBarCode()
-  const digitVerification = new ArrecadacaoDigitVerification()
+  const module10 = new Module10()
+  const digitVerification = new ArrecadacaoDigitVerification(module10)
   return new BoletoArrecadacao(convertToBarCode, digitVerification)
 }

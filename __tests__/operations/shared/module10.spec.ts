@@ -1,4 +1,4 @@
-import { Module10 } from '../../../src/operations/boleto-bancario'
+import { Module10 } from '../../../src/operations/shared'
 
 type SutType = {
   sut: Module10
