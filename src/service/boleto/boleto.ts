@@ -26,6 +26,6 @@ export class BoletoService implements IService {
       return this.boletoArrecadacao.handle(digitableLine)
     }
 
-    return badRequest('Linha digitável inválida')
+    return badRequest('Inválida Linha digitável')
   }
 }
