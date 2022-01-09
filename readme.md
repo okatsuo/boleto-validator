@@ -89,6 +89,6 @@ yarn docker:dev
 - **yarn test:ci**: roda todos os testes do sistema e gera o coverage atual
 ---
 
-Por padrão as portas estão 8800, mas pode ser trocada, basta clonar o arquivo .env.example e modificar o nome para .env e enserir a nova porta na variável PORT=
+Por padrão as portas estão 8800, mas pode ser trocada, basta clonar o arquivo .env.example e modificar o nome para .env e inserir a nova porta na variável PORT=
 
 Por padrão o docker-compose e docker também rodam na mesma porta, nesse caso é necessário trocar a porta manualmente dentro dos arquivos dos mesmos.
