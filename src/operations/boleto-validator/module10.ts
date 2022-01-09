@@ -1,9 +1,6 @@
-export type IModule10 = {
-  calculate: (value: string) => string
-}
+import { IModule10 } from '../../domain/useCases/module10'
 
 export class Module10 implements IModule10 {
-  private readonly requiredLenght = 9
   calculate = (value: string): string => {
     const code = value.split('').reverse()
 

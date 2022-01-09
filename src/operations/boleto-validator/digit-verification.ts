@@ -1,4 +1,4 @@
-import { IModule10 } from './module10'
+import { IModule10 } from '../../domain/useCases/module10'
 
 export type IDigitVerification = {
   validate: (completeDigitableLine: string) => boolean
