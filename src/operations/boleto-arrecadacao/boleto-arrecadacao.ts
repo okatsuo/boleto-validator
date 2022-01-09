@@ -1,14 +1,18 @@
 import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
-import { ok } from '../../service/helpers/http-errors'
+import { badRequest, ok } from '../../service/helpers/http-errors'
 import { IHttpResponse } from '../../service/protocols/httpResponse'
+import { IDigitVerification } from '../boleto-validator/digit-verification'
 
 export class BoletoArrecadacao {
-  constructor (private readonly convertToBarCode: IConvertToBarCode
+  constructor (private readonly convertToBarCode: IConvertToBarCode,
+    private readonly digitVerification: IDigitVerification
   ) {
   }
 
   handle = (digitableLine: string): IHttpResponse => {
     const barCode = this.convertToBarCode.convert(digitableLine)
+    const isValidDigitVerification = this.digitVerification.validate(digitableLine)
+    if (!isValidDigitVerification) return badRequest('Inválida validação de digíto')
 
     return ok({
       barCode,
