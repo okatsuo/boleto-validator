@@ -4,8 +4,15 @@
 <br />
 
 - [X] validar boleto do tipo bancário
+  - [X] calculo de valor
+  - [X] calculo da data
+  - [X] transformar em de número do código de barra
   - [X] testes unitários
-- [ ]  validar boleto do tipo convênio
+
+- [X]  validar boleto do tipo convênio
+  - [ ] calculo de valor
+  - [X] calculo da data
+  - [X] transformar em de número do código de barra
   - [ ] testes unitários
 
 ---
@@ -92,3 +99,14 @@ yarn docker:dev
 Por padrão as portas estão 8800, mas pode ser trocada, basta clonar o arquivo .env.example e modificar o nome para .env e inserir a nova porta na variável PORT=
 
 Por padrão o docker-compose e docker também rodam na mesma porta, nesse caso é necessário trocar a porta manualmente dentro dos arquivos dos mesmos.
+
+---
+
+> ## to-do
+
+- retorno de erro mais detalhado sobre o erro específico
+- desacoplar algumas verificações para melhor teste unitário
+- otimizar condições (if)
+- teste unitário para as operações de boleto do tipo convênio
+- calculo do valor do boleto do tipo convênio
+- verificações se o boleto possui ou não data de vencimento e valor
