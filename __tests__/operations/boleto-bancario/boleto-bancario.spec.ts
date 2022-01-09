@@ -74,21 +74,23 @@ describe('Boleto validator', () => {
   const validDigitableLine = '21290001192110001210904475617405975870000002000'
 
   it('should return false if is called with any characters', () => {
+    const badRequestError = badRequest('Inválido formato de linha digitável')
+
     const { sut } = makeSut()
     expect(sut.handle('2129000119211000121090447561740597587000000200A'))
-      .toEqual(badRequest('Inválido formato de linha digitável'))
+      .toEqual(badRequestError)
 
     expect(sut.handle('A1290001192110001210904475617405975870000002000'))
-      .toEqual(badRequest('Inválido formato de linha digitável'))
+      .toEqual(badRequestError)
 
     expect(sut.handle('212.00011921100012109044756174059758700.000200A'))
-      .toEqual(badRequest('Inválido formato de linha digitável'))
+      .toEqual(badRequestError)
 
     expect(sut.handle('2120001192110001210904-47561740597587000002001.'))
-      .toEqual(badRequest('Inválido formato de linha digitável'))
+      .toEqual(badRequestError)
 
     expect(sut.handle('2129000119211000121090447561740597587000000200 '))
-      .toEqual(badRequest('Inválido formato de linha digitável'))
+      .toEqual(badRequestError)
   })
 
   it('should call the digitVerification with correct value', () => {
