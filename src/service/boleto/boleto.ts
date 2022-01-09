@@ -1,5 +1,6 @@
 import { Request } from 'express'
 import { IBoletoValidator } from '../../domain/useCases'
+import { boletoError } from '../../operations/helper'
 import { badRequest } from '../helpers'
 import { IHttpResponse } from '../protocols/httpResponse'
 import { IService } from '../protocols/service'
@@ -26,6 +27,6 @@ export class BoletoService implements IService {
       return this.boletoArrecadacao.handle(digitableLine)
     }
 
-    return badRequest('Inválida Linha digitável')
+    return badRequest(boletoError.invalidDigitableLine)
   }
 }

@@ -5,6 +5,7 @@ import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
 import { IDigitVerification } from '../../domain/useCases/digit-verification'
 import { badRequest, ok } from '../../service/helpers/http-errors'
 import { IHttpResponse } from '../../service/protocols/httpResponse'
+import { boletoError } from '../helper'
 
 /* exemplos */
 // 03399340858500000011842498201013388610000065930
@@ -19,11 +20,15 @@ export class BoletoBancario implements IBoletoValidator {
   ) {}
 
   handle = (digitableLine: string): IHttpResponse => {
-    const isValidFormat = this.boletoFormat.test(digitableLine)
-    if (!isValidFormat) return badRequest('Inválido formato de linha digitável')
+    const isValidDigitableLine = this.boletoFormat.test(digitableLine)
+    if (!isValidDigitableLine) {
+      return badRequest(boletoError.invalidDigitableLine)
+    }
 
     const isValidDv = this.digitVerification.validate(digitableLine)
-    if (!isValidDv) return badRequest('Inválido digito verificador')
+    if (!isValidDv) {
+      return badRequest(boletoError.invalidDigitVerification)
+    }
 
     const barCode = this.codeBar.convert(digitableLine)
 

@@ -5,6 +5,7 @@ import {
   IConvertToBarCode
 } from '../../../src/domain/useCases'
 import { BoletoBancario } from '../../../src/operations/boleto-bancario'
+import { boletoError } from '../../../src/operations/helper'
 import { badRequest, ok } from '../../../src/service/helpers'
 
 const makeCalculateDateStub = (): ICalculateDate => {
@@ -74,7 +75,7 @@ describe('Boleto validator', () => {
   const validDigitableLine = '21290001192110001210904475617405975870000002000'
 
   it('should return false if is called with any characters', () => {
-    const badRequestError = badRequest('Inválido formato de linha digitável')
+    const badRequestError = badRequest(boletoError.invalidDigitableLine)
 
     const { sut } = makeSut()
     expect(sut.handle('2129000119211000121090447561740597587000000200A'))
@@ -110,7 +111,7 @@ describe('Boleto validator', () => {
   it('should return a badRequest if digitVerification returns false', () => {
     const { sut, digitVerificationStub } = makeSut()
     jest.spyOn(digitVerificationStub, 'validate').mockReturnValueOnce(false)
-    expect(sut.handle(validDigitableLine)).toEqual(badRequest('Inválido digito verificador'))
+    expect(sut.handle(validDigitableLine)).toEqual(badRequest(boletoError.invalidDigitVerification))
   })
 
   it('should call the ConvertCodeBar with correct value', () => {
