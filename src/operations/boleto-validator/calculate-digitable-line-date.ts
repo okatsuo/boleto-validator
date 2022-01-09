@@ -1,6 +1,4 @@
-export type ICalculateDate = {
-  calculate: (value: string) => string
-}
+import { ICalculateDate } from '../../domain/useCases/calculate-date'
 
 export class CalculateDate implements ICalculateDate {
   calculate = (value: string): string => {

@@ -1,11 +1,14 @@
 import { IBoletoValidator } from '../../domain/useCases/boleto-validator'
+import { ICalculateAmount } from '../../domain/useCases/calculate-amount'
+import { ICalculateDate } from '../../domain/useCases/calculate-date'
 import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
 import { IDigitVerification } from '../../domain/useCases/digit-verification'
 import { badRequest, ok } from '../../service/helpers/http-errors'
 import { IHttpResponse } from '../../service/protocols/httpResponse'
-import { ICalculateAmount } from './calculate-amount'
-import { ICalculateDate } from './calculate-digitable-line-date'
 
+/* exemplos */
+// 03399340858500000011842498201013388610000065930
+// 21290001192110001210904475617405975870000002000
 export class BoletoValidator implements IBoletoValidator {
   private readonly boletoFormat = /^[0-9]{47}$/
   constructor (
@@ -37,6 +40,3 @@ export class BoletoValidator implements IBoletoValidator {
     })
   }
 }
-
-// 03399340858500000011842498201013388610000065930
-// 21290001192110001210904475617405975870000002000
