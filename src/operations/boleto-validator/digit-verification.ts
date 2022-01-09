@@ -1,8 +1,5 @@
+import { IDigitVerification } from '../../domain/useCases/digit-verification'
 import { IModule10 } from '../../domain/useCases/module10'
-
-export type IDigitVerification = {
-  validate: (completeDigitableLine: string) => boolean
-}
 
 export class DigitVerification implements IDigitVerification {
   constructor (private readonly module10: IModule10) {}

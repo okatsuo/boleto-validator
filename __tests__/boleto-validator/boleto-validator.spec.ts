@@ -1,8 +1,8 @@
 import { IConvertToBarCode } from '../../src/domain/useCases/convert-to-bar-code'
+import { IDigitVerification } from '../../src/domain/useCases/digit-verification'
 import { BoletoValidator } from '../../src/operations/boleto-validator/boleto-validator'
 import { ICalculateAmount } from '../../src/operations/boleto-validator/calculate-amount'
 import { ICalculateDate } from '../../src/operations/boleto-validator/calculate-digitable-line-date'
-import { IDigitVerification } from '../../src/operations/boleto-validator/digit-verification'
 import { badRequest, ok } from '../../src/service/helpers/http-errors'
 
 const makeCalculateDateStub = (): ICalculateDate => {

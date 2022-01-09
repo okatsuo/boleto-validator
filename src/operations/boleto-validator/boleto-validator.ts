@@ -1,10 +1,10 @@
 import { IBoletoValidator } from '../../domain/useCases/boleto-validator'
 import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
+import { IDigitVerification } from '../../domain/useCases/digit-verification'
 import { badRequest, ok } from '../../service/helpers/http-errors'
 import { IHttpResponse } from '../../service/protocols/httpResponse'
 import { ICalculateAmount } from './calculate-amount'
 import { ICalculateDate } from './calculate-digitable-line-date'
-import { IDigitVerification } from './digit-verification'
 
 export class BoletoValidator implements IBoletoValidator {
   private readonly boletoFormat = /^[0-9]{47}$/
