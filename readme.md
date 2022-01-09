@@ -1,6 +1,6 @@
 # **Boleto-validator API**
 
-> ## feature
+> ## Feature
 <br />
 
 - [X] validar boleto do tipo bancário
@@ -9,7 +9,7 @@
   - [ ] testes unitários
 
 ---
-> ## retorno da api
+> ## Retorno da api
 <br />
 
 A api retorna um json, contendo caso de sucesso ou erro.
