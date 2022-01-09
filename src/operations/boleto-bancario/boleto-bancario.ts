@@ -9,7 +9,7 @@ import { IHttpResponse } from '../../service/protocols/httpResponse'
 /* exemplos */
 // 03399340858500000011842498201013388610000065930
 // 21290001192110001210904475617405975870000002000
-export class BoletoValidator implements IBoletoValidator {
+export class BoletoBancario implements IBoletoValidator {
   private readonly boletoFormat = /^[0-9]{47}$/
   constructor (
     private readonly calculateDate: ICalculateDate,

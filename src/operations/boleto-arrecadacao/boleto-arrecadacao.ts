@@ -1,7 +1,7 @@
+import { IDigitVerification } from '../../domain/useCases'
 import { IConvertToBarCode } from '../../domain/useCases/convert-to-bar-code'
 import { badRequest, ok } from '../../service/helpers/http-errors'
 import { IHttpResponse } from '../../service/protocols/httpResponse'
-import { IDigitVerification } from '../boleto-validator/digit-verification'
 
 export class BoletoArrecadacao {
   constructor (private readonly convertToBarCode: IConvertToBarCode,

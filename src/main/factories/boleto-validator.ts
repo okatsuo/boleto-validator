@@ -1,14 +1,14 @@
 import {
-  BoletoValidator,
+  BoletoBancario,
   CalculateDate,
   CalculateAmount,
   DigitVerification,
   Module10,
   ConvertToBarCode
-} from '../../operations/boleto-validator'
+} from '../../operations/boleto-bancario'
 
-export const makeBoletoValidator = (): BoletoValidator => {
-  return new BoletoValidator(
+export const makeBoletoValidator = (): BoletoBancario => {
+  return new BoletoBancario(
     new CalculateDate(),
     new CalculateAmount(),
     new DigitVerification(new Module10()),

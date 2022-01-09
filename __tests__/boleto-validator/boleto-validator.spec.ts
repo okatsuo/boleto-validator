@@ -4,7 +4,7 @@ import {
   IDigitVerification,
   IConvertToBarCode
 } from '../../src/domain/useCases'
-import { BoletoValidator } from '../../src/operations/boleto-validator'
+import { BoletoBancario } from '../../src/operations/boleto-bancario'
 import { badRequest, ok } from '../../src/service/helpers'
 
 const makeCalculateDateStub = (): ICalculateDate => {
@@ -46,7 +46,7 @@ type SutType = {
   calculateAmountStub: ICalculateAmount
   digitVerificationStub: IDigitVerification
   converterToBarCodeStub: IConvertToBarCode
-  sut: BoletoValidator
+  sut: BoletoBancario
 }
 
 const makeSut = (): SutType => {
@@ -54,7 +54,7 @@ const makeSut = (): SutType => {
   const calculateAmountStub = makeCalculateAmountStub()
   const digitVerificationStub = makeDigitVerificationStub()
   const converterToBarCodeStub = makeConverterToBarCodeStub()
-  const sut = new BoletoValidator(
+  const sut = new BoletoBancario(
     calculateDateStub,
     calculateAmountStub,
     digitVerificationStub,

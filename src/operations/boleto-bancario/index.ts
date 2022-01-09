@@ -1,4 +1,4 @@
-export * from './boleto-validator'
+export * from './boleto-bancario'
 export * from './calculate-amount'
 export * from './calculate-digitable-line-date'
 export * from './convert-to-bar-code'
