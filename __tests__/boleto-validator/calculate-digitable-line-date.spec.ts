@@ -1,4 +1,4 @@
-import { CalculateDate } from '../../src/operations/boleto-validator/calculate-digitable-line-date'
+import { CalculateDate } from '../../src/operations/boleto-validator'
 
 type SutType = {
   sut: CalculateDate

@@ -1,6 +1,6 @@
 import { Request } from 'express'
-import { IBoletoValidator } from '../../domain/useCases/boleto-validator'
-import { badRequest } from '../helpers/http-errors'
+import { IBoletoValidator } from '../../domain/useCases'
+import { badRequest } from '../helpers'
 import { IHttpResponse } from '../protocols/httpResponse'
 import { IService } from '../protocols/service'
 

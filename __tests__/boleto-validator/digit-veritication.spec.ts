@@ -1,6 +1,5 @@
-import { IModule10 } from '../../src/domain/useCases/module10'
-import { DigitVerification } from '../../src/operations/boleto-validator/digit-verification'
-import { Module10 } from '../../src/operations/boleto-validator/module10'
+import { IModule10 } from '../../src/domain/useCases'
+import { DigitVerification, Module10 } from '../../src/operations/boleto-validator'
 
 type SutType = {
   Module10Stub: IModule10

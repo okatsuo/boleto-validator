@@ -1,7 +1,6 @@
 import express from 'express'
 import { BoletoService } from '../../service/boleto'
-import { makeBoletoArrecadacao } from '../factories/boleto-arrecadacao'
-import { makeBoletoValidator } from '../factories/boleto-validator'
+import { makeBoletoValidator, makeBoletoArrecadacao } from '../factories'
 import { routerAdapter } from '../routerAdapter'
 
 export const boletoRouters = express.Router()
