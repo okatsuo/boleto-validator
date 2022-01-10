@@ -116,9 +116,9 @@ Por padrão o docker-compose e docker também rodam na mesma porta, nesse caso �
 
 > ## to-do
 
-- retorno de erro mais detalhado sobre o erro específico
-- desacoplar algumas verificações para melhor teste unitário
-- otimizar condições (if)
-- teste unitário para as operações de boleto do tipo convênio
-- calculo do valor do boleto do tipo convênio
-- verificações se o boleto possui ou não data de vencimento e valor
+- Retorno de erro mais detalhado sobre o erro específico
+- Desacoplar algumas verificações para melhor teste unitário
+- Otimizar condições (if)
+- Teste unitário para as operações de boleto do tipo convênio
+- Calculo do valor do boleto do tipo convênio
+- Verificações se o boleto possui ou não data de vencimento e valor
