@@ -3,41 +3,41 @@
 > ## Feature
 <br />
 
-- [X] validar boleto do tipo bancário
-  - [X] calculo de valor
-  - [X] formatar data
-  - [X] transformar em número do código de barra
-  - [X] testes unitários
+- [X] Validar boleto do tipo bancário
+  - [X] Calculo de valor
+  - [X] Formatar data
+  - [X] Transformar em número do código de barra
+  - [X] Testes unitários
 
 <br />
 
-- [X]  validar boleto do tipo convênio
-  - [ ] calculo de valor
-  - [X] formatar data
-  - [X] transformar em número do código de barra
-  - [ ] testes unitários
+- [X]  Validar boleto do tipo convênio
+  - [ ] Calculo de valor
+  - [X] Formatar data
+  - [X] Transformar em número do código de barra
+  - [ ] Testes unitários
 
 ---
 > ## Como executar o projeto
 <br />
 
-para instalar as dependências, no teu console de preferência:
+Para instalar as dependências, no teu console de preferência:
  ```bash
   yarn install
   ```
 
-para rodar a api:
+Para rodar a api:
  ```bash
  yarn start
  ```
 
-para rodar em modo desenvolvimento: 
+Para rodar em modo desenvolvimento: 
 
  ```bash
  yarn dev
  ```
 
-ou para rodar com o docker-compose:
+Ou para rodar com o docker-compose:
 
 ```bash
 yarn docker:dev
@@ -100,7 +100,7 @@ A api retorna um json, contendo caso de sucesso ou erro.
 
 <br />
 
-códigos do tipo linha digitável usados para teste:
+Códigos do tipo linha digitável usados para teste:
  - tipo bancário:
     - 03399340858500000011842498201013388610000065930
     - 21290001192110001210904475617405975870000002000
