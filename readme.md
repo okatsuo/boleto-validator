@@ -4,6 +4,7 @@
 <br />
 
 - [X] Validar boleto do tipo bancário
+  - [X] Validações do boleto  
   - [X] Calculo de valor
   - [X] Formatar data
   - [X] Transformar em número do código de barra
@@ -12,6 +13,7 @@
 <br />
 
 - [X]  Validar boleto do tipo convênio
+  - [X] Validações do boleto
   - [ ] Calculo de valor
   - [X] Formatar data
   - [X] Transformar em número do código de barra
