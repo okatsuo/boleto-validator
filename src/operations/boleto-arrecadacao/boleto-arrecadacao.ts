@@ -23,7 +23,7 @@ export class BoletoArrecadacao {
 
     return ok({
       barCode,
-      amount: 'mocked_not_working_yet',
+      amount: 'mock_convênio',
       expirationDate
     })
   }
