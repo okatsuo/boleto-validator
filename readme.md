@@ -17,6 +17,10 @@
   - [X] Transformar em número do código de barra
   - [ ] Testes unitários
 
+<br />
+
+- [X] Erro customizado para as validações
+
 ---
 > ## Como executar o projeto
 <br />
