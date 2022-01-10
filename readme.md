@@ -5,43 +5,19 @@
 
 - [X] validar boleto do tipo bancário
   - [X] calculo de valor
-  - [X] calculo da data
-  - [X] transformar em de número do código de barra
+  - [X] formatar data
+  - [X] transformar em número do código de barra
   - [X] testes unitários
+
+<br />
 
 - [X]  validar boleto do tipo convênio
   - [ ] calculo de valor
-  - [X] calculo da data
-  - [X] transformar em de número do código de barra
+  - [X] formatar data
+  - [X] transformar em número do código de barra
   - [ ] testes unitários
 
 ---
-> ## Retorno da api
-<br />
-
-A api retorna um json, contendo caso de sucesso ou erro.
-
- - exemplo de sucesso: (status code: 200)
- ```js
-  {
-    "data": {
-      "barCode": "21299758700000020000001121100012100447561740",
-      "amount": "20.00",
-      "expirationDate": "2018-07-16"
-    }
-  }
- ```
- - exemplo de erro: (status code 400)
-```js
-  {
-    "error": {
-      "message": "Linha digitável inválida"
-    }
-  }
- ```
----
-
-
 > ## Como executar o projeto
 <br />
 
@@ -80,6 +56,31 @@ yarn docker:dev
 
 ---
 
+> ## Retorno da api
+<br />
+
+A api retorna um json, contendo caso de sucesso ou erro.
+
+ - exemplo de sucesso: (status code: 200)
+ ```js
+  {
+    "data": {
+      "barCode": "21299758700000020000001121100012100447561740",
+      "amount": "20.00",
+      "expirationDate": "2018-07-16"
+    }
+  }
+ ```
+ - exemplo de erro: (status code 400)
+```js
+  {
+    "error": {
+      "message": "Linha digitável inválida"
+    }
+  }
+ ```
+---
+
 > ## Scripts
 <br />
 
@@ -95,6 +96,9 @@ yarn docker:dev
 
 - **yarn test:ci**: roda todos os testes do sistema e gera o coverage atual
 ---
+> ## Teste manual
+
+<br />
 
 códigos do tipo linha digitável usados para teste:
  - tipo bancário:
@@ -102,7 +106,8 @@ códigos do tipo linha digitável usados para teste:
     - 21290001192110001210904475617405975870000002000
   - tipo convênio:
     - 817700000000010936599702411310797039001433708318
-
+---
+**Atenção**:
 Por padrão as portas estão 8800, mas pode ser trocada, basta clonar o arquivo .env.example e modificar o nome para .env e inserir a nova porta na variável PORT=
 
 Por padrão o docker-compose e docker também rodam na mesma porta, nesse caso é necessário trocar a porta manualmente dentro dos arquivos dos mesmos.
